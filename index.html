@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en-US" style="scroll-behavior: smooth;">
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -111,213 +111,240 @@
 </div>
 
 
-<div id="calculation">
+<body>
 
-  <div>
-  
-      <div style="text-align: center;" class="container">
-        <h2 style="text-align: center;">হিসাব</h2>
-        <div style="text-align: center;"  class="btn-group btn-group-lg">
-          <a style="font-size: 20px;" class="nav-link smooth-scroll" href="#bhori" class="btn btn-primary">ভরিতে হিসাব করুন</a>
-          <a style="font-size: 20px;" class="nav-link smooth-scroll" href="#an" class="btn btn-primary">আনাতে হিসাব করুন</a>
-          <a style="font-size: 20px;" class="nav-link smooth-scroll" href="#gram" class="btn btn-primary">গ্রামে হিসাব করুন</a>
-          <a style="font-size: 20px;" class="nav-link smooth-scroll" class="btn btn-primary" href="http://goldpricez.com/bd/gram" target="_blank">ওয়েব-সাইট এ দাম দেখুন</a>
+  <div id="calculation">
+
+      <div>
+      
+          <div style="text-align: center;" class="container">
+            
+            <h2 style="text-align: center;padding-top: 20px;">হিসাব</h2>
+            <div style="text-align: center; margin-bottom: 5px;"  class="btn-group btn-group-lg">
+              <a class="nav-link smooth-scroll" style="font-size: 20px; " onclick="control('bhori')" href="#bh" class="btn btn-primary">ভরিতে হিসাব করুন</a>
+              <a class="nav-link smooth-scroll" style="font-size: 20px; " onclick="control('anna')" href="#an" class="btn btn-primary">আনাতে হিসাব করুন</a>
+              <a class="nav-link smooth-scroll" style="font-size: 20px; " onclick="control('gram')" href="#gram" class="btn btn-primary">গ্রামে হিসাব করুন</a>
+            </div>
+
+          </div>
+          <div style="text-align: center;">
+          
+            <div style="text-align: center;"  class="btn-group btn-group-lg">
+              <a class="nav-link smooth-scroll" style="font-size: 20px;" class="btn btn-primary" href="http://goldpricez.com/bd/gram" target="_blank">ওয়েবসাইটে দাম দেখুন</a>
+              <a class="nav-link smooth-scroll" style="font-size: 20px;" class="btn btn-primary" href="https://anup46.github.io/GoldPriceCalculation/">শুধু হিসাবের সাইটে যান</a>
+            </div>
+          </div>
+    
+    
+      <div style="display: none; background-color:darkgrey;" id="bh">
+    
+    
+    
+        <h2 style="color: blue;text-align: center; padding: 10px;">স্বর্ণের ও রুপার হিসাব (ভরিতে)</h2>
+    
+        <div class="round2" style="text-align: center;">
+    
+            <p>প্রতি ভরি স্বর্ণের/রুপার দাম প্রবেশ করান : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text" id="price" > টাকা।
+            </input> <button class="button" type="button" onclick="myFunction()">হিসাব করুন</button>
+            </p>
+            <p>
+              <span>প্রতি আনা স্বর্ণের/রুপার দাম  : <span style="font-weight: bold;" id="anna"></span></span>
+            </p>
+            <p>
+              <span>প্রতি রতি স্বর্ণের/রুপার দাম  : <span style="font-weight: bold;" id="roti"></span></span>
+            </p>
+            <p>
+              <span>প্রতি পয়েন্ট স্বর্ণের/রুপার দাম  : <span style="font-weight: bold;" id="point"></span></span>
+            </p>
         </div>
-      </div>
+    
+        <div class="round2" style="text-align: center;">
+        <h2 style="color: brown; padding: 10px;"> আপনার স্বর্ণের/রুপার দাম হিসাব করুন </h2>
+    
+        
+        <p>গ্রাহকের নাম : <input placeholder="নাম লিখুন" style="font-weight: bold; border-radius: 5px;text-align: center;" type="text" ></input> </p>
+        <p>পিতার নাম : <input placeholder="পিতার নাম লিখুন" style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"></input> </p>
+        <p>ঠিকানা  : <input placeholder="ঠিকানা লিখুন" style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"></input> </p>
+        <p>জিনিসের বিবরণী: <textarea placeholder="আপনার জিনিসের বিবরণী এইখানে লিখুন..." rows="8" cols="30" style="font-weight: bold; border-radius: 5px;"></textarea></p>
+    
+            <p>প্রতি ভরি স্বর্ণের/রুপার দাম প্রবেশ করান : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text" id="price2" > টাকা।</input> </p>
+    
+            <p><span>স্বর্ণের/রুপার ওজোন (ভরি) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="voriw" >
+              <span style="font-weight: bold;" id="showvp"></span></span>
+            </p>
+            <p><span>স্বর্ণের/রুপার ওজোন (আনা) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="annaw" >
+              <span style="font-weight: bold;" id="showap"></span></span>
+            </p>
+            <p><span>স্বর্ণের/রুপার ওজোন (রতি) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="rotiw" >
+              <span style="font-weight: bold;" id="showrp"></span></span>
+            </p>
+            <p><span>স্বর্ণের/রুপার ওজোন (পয়েন্ট) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="pointw" >
+              <span style="font-weight: bold;" id="showpp"></span></span>
+            </p>
+        
+    
+            <button class="button" type="button" onclick="myFunction2()">হিসাব করুন</button>
+    
+            <p>
+              <span style="font-size: 30px; padding: 20px;">স্বর্ণের/রুপার হিসাবকৃত দাম : <span style="font-size: 30px;font-weight: bold;" id="show"></span> <span style="padding: 20px;">টাকা।</span></span>
+            </p>
+    
+            <p style="font-size: 20px;">বানী খরচ : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="mp" >টাকা।
+            </p>
+    
+            <button class="button" type="button" onclick="myFunction3()">+</button>
+    
+            <p>
+              <span style="font-size: 30px; padding: 20px;">স্বর্ণের/রুপার মোট হিসাবকৃত দাম : <span style="font-size: 30px;font-weight: bold;" id=showfinal></span> </span>
+            </p>
+    
+            <button class="button" onclick="window.print()">হিসাবটি পিডিফ আকারে সংরক্ষণ করুন</button>
+     
+        </div>
+        
+    
+      </div >
+    
+      <div style=" display:none; background-color: whitesmoke;" id="an">
+    
+        <h2 style="color: blue;text-align: center; padding: 10px;">স্বর্ণের ও রুপার হিসাব (আনায়)</h2>
+    
+        <div class="round2" style="text-align: center;">
+    
+            <p>প্রতি আনাতে স্বর্ণের/রুপার দাম প্রবেশ করান : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text" id="priceA" > টাকা।
+            </input> <button class="button" type="button" onclick="myFunctionA()">হিসাব করুন</button>
+            </p>
+            <p>
+              <span>প্রতি ভরি স্বর্ণের/রুপার দাম  : <span style="font-weight: bold;" id="bhoriA"></span></span>
+            </p>
+            <p>
+              <span>প্রতি রতি স্বর্ণের/রুপার দাম  : <span style="font-weight: bold;" id="rotiA"></span></span>
+            </p>
+            <p>
+              <span>প্রতি পয়েন্ট স্বর্ণের/রুপার দাম  : <span style="font-weight: bold;" id="pointA"></span></span>
+            </p>
+        </div>
+    
+        <div class="round2" style="text-align: center;">
+        <h2 style="color: brown; padding: 10px;"> আপনার স্বর্ণের/রুপার দাম হিসাব করুন </h2>
+
+        <p>গ্রাহকের নাম : <input placeholder="নাম লিখুন" style="font-weight: bold; border-radius: 5px;text-align: center;" type="text" ></input> </p>
+        <p>পিতার নাম : <input placeholder="পিতার নাম লিখুন" style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"></input> </p>
+        <p>ঠিকানা  : <input placeholder="ঠিকানা লিখুন" style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"></input> </p>
+        <p>জিনিসের বিবরণী: <textarea placeholder="আপনার জিনিসের বিবরণী এইখানে লিখুন..." rows="8" cols="30" style="font-weight: bold; border-radius: 5px;"></textarea></p>
+    
+        
+            <p>প্রতি আনায় স্বর্ণের/রুপার দাম প্রবেশ করান : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text" id="price2A" > টাকা।</input> </p>
+    
+            <p><span>স্বর্ণের/রুপার ওজোন (ভরি) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="voriwA" >
+              <span style="font-weight: bold;" id="showvpA"></span></span>
+            </p>
+            <p><span>স্বর্ণের/রুপার ওজোন (আনা) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="annawA" >
+              <span style="font-weight: bold;" id="showapA"></span></span>
+            </p>
+            <p><span>স্বর্ণের/রুপার ওজোন (রতি) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="rotiwA" >
+              <span style="font-weight: bold;" id="showrpA"></span></span>
+            </p>
+            <p><span>স্বর্ণের/রুপার ওজোন (পয়েন্ট) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="pointwA" >
+              <span style="font-weight: bold;" id="showppA"></span></span>
+            </p>
+        
+    
+            <button class="button" type="button" onclick="myFunction2A()">হিসাব করুন</button>
+    
+            <p>
+              <span style="font-size: 30px; padding: 20px;">স্বর্ণের/রুপার হিসাবকৃত দাম : <span style="font-size: 30px;font-weight: bold;" id="showA"></span> <span style="padding: 20px;">টাকা।</span></span>
+            </p>
+    
+            <p style="font-size: 20px;">বানী খরচ : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="mpA" >টাকা।
+            </p>
+    
+            <button class="button" type="button" onclick="myFunction3A()">+</button>
+    
+            <p>
+              <span style="font-size: 30px; padding: 20px;">স্বর্ণের/রুপার মোট হিসাবকৃত দাম : <span style="font-size: 30px;font-weight: bold;" id=showfinalA></span> </span>
+            </p>
+    
+            <button class="button" onclick="window.print()">হিসাবটি পিডিফ আকারে সংরক্ষণ করুন</button>
+     
+        </div>
+    
+      </div >
 
 
-  <div style=" background-color:darkgrey;" id="bhori">
+      <div style="display: none; background-color: rgb(230, 236, 231);" id="gram">
+
+        <h2 style="color: blue;text-align: center; padding: 10px;">স্বর্ণের ও রুপার হিসাব (গ্রামে)</h2>
+    
+        <div class="round2" style="text-align: center;">
+    
+            <p>প্রতি গ্রামে স্বর্ণের/রুপার দাম প্রবেশ করান : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text" id="priceG" > টাকা।
+            </input> <button class="button" type="button" onclick="myFunctionG()">হিসাব করুন</button>
+            </p>
+            <p>
+              <span>প্রতি ভরি স্বর্ণের/রুপার দাম  : <span style="font-weight: bold;" id="bhoriG"></span></span>
+            </p>
+            <p>
+              <span>প্রতি আনা স্বর্ণের/রুপার দাম  : <span style="font-weight: bold;" id="annaG"></span></span>
+            </p>
+            <p>
+              <span>প্রতি রতি স্বর্ণের/রুপার দাম  : <span style="font-weight: bold;" id="rotiG"></span></span>
+            </p>
+            <p>
+              <span>প্রতি পয়েন্ট স্বর্ণের/রুপার দাম  : <span style="font-weight: bold;" id="pointG"></span></span>
+            </p>
+        </div>
+    
+        <div class="round2" style="text-align: center;">
+        <h2 style="color: brown; padding: 10px;"> আপনার স্বর্ণের/রুপার দাম হিসাব করুন </h2>
+
+        <p>গ্রাহকের নাম : <input placeholder="নাম লিখুন" style="font-weight: bold; border-radius: 5px;text-align: center;" type="text" ></input> </p>
+        <p>পিতার নাম : <input placeholder="পিতার নাম লিখুন" style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"></input> </p>
+        <p>ঠিকানা  : <input placeholder="ঠিকানা লিখুন" style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"></input> </p>
+        <p>জিনিসের বিবরণী: <textarea placeholder="আপনার জিনিসের বিবরণী এইখানে লিখুন..." rows="8" cols="30" style="font-weight: bold; border-radius: 5px;"></textarea></p>
+    
+        
+            <p>প্রতি গ্রামে স্বর্ণের/রুপার দাম প্রবেশ করান : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text" id="price2G" > টাকা।</input> </p>
+    
+            <p><span>স্বর্ণের/রুপার ওজোন (ভরি) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="voriwG" >
+              <span style="font-weight: bold;" id="showvpG"></span></span>
+            </p>
+            <p><span>স্বর্ণের/রুপার ওজোন (আনা) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="annawG" >
+              <span style="font-weight: bold;" id="showapG"></span></span>
+            </p>
+            <p><span>স্বর্ণের/রুপার ওজোন (রতি) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="rotiwG" >
+              <span style="font-weight: bold;" id="showrpG"></span></span>
+            </p>
+            <p><span>স্বর্ণের/রুপার ওজোন (পয়েন্ট) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="pointwG" >
+              <span style="font-weight: bold;" id="showppG"></span></span>
+            </p>
+        
+    
+            <button class="button" type="button" onclick="myFunction2G()">হিসাব করুন</button>
+    
+            <p>
+              <span style="font-size: 30px; padding: 20px;">স্বর্ণের/রুপার হিসাবকৃত দাম : <span style="font-size: 30px;font-weight: bold;" id="showG"></span> <span style="padding: 20px;">টাকা।</span></span>
+            </p>
+    
+            <p style="font-size: 20px;">বানী খরচ : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="mpG" >টাকা।
+            </p>
+    
+            <button class="button" type="button" onclick="myFunction3G()">+</button>
+    
+            <p>
+              <span style="font-size: 30px; padding: 20px;">স্বর্ণের/রুপার মোট হিসাবকৃত দাম : <span style="font-size: 30px;font-weight: bold;" id=showfinalG></span> </span>
+            </p>
+    
+            <button class="button" onclick="window.print()">হিসাবটি পিডিফ আকারে সংরক্ষণ করুন</button>
+     
+        </div>
+    
+      </div >
+    
+    
 
 
-
-    <h2 style="color: blue;text-align: center; padding: 10px;">স্বর্ণের ও রুপার হিসাব (ভরিতে)</h2>
-
-    <div class="round2" style="text-align: center;">
-
-        <p>প্রতি ভরি স্বর্ণের/রুপার দাম প্রবেশ করান : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text" id="price" > টাকা।
-        </input> <button class="button" type="button" onclick="myFunction()">হিসাব করুন</button>
-        </p>
-        <p>
-          <span>প্রতি আনা স্বর্ণের/রুপার দাম  : <span style="font-weight: bold;" id="anna"></span></span>
-        </p>
-        <p>
-          <span>প্রতি রতি স্বর্ণের/রুপার দাম  : <span style="font-weight: bold;" id="roti"></span></span>
-        </p>
-        <p>
-          <span>প্রতি পয়েন্ট স্বর্ণের/রুপার দাম  : <span style="font-weight: bold;" id="point"></span></span>
-        </p>
     </div>
-
-    <div class="round2" style="text-align: center;">
-    <h2 style="color: brown; padding: 10px;"> আপনার স্বর্ণের/রুপার দাম হিসাব করুন </h2>
-
-    
-
-        <p>প্রতি ভরি স্বর্ণের/রুপার দাম প্রবেশ করান : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text" id="price2" > টাকা।</input> </p>
-
-        <p><span>স্বর্ণের/রুপার ওজোন (ভরি) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="voriw" >
-          <span style="font-weight: bold;" id="showvp"></span></span>
-        </p>
-        <p><span>স্বর্ণের/রুপার ওজোন (আনা) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="annaw" >
-          <span style="font-weight: bold;" id="showap"></span></span>
-        </p>
-        <p><span>স্বর্ণের/রুপার ওজোন (রতি) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="rotiw" >
-          <span style="font-weight: bold;" id="showrp"></span></span>
-        </p>
-        <p><span>স্বর্ণের/রুপার ওজোন (পয়েন্ট) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="pointw" >
-          <span style="font-weight: bold;" id="showpp"></span></span>
-        </p>
-    
-
-        <button class="button" type="button" onclick="myFunction2()">হিসাব করুন</button>
-
-        <p>
-          <span style="font-size: 30px; padding: 20px;">স্বর্ণের/রুপার হিসাবকৃত দাম : <span style="font-size: 30px;font-weight: bold;" id="show"></span> <span style="padding: 20px;">টাকা।</span></span>
-        </p>
-
-        <p style="font-size: 20px;">বানী খরচ : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="mp" >টাকা।
-        </p>
-
-        <button class="button" type="button" onclick="myFunction3()">+</button>
-
-        <p>
-          <span style="font-size: 30px; padding: 20px;">স্বর্ণের/রুপার মোট হিসাবকৃত দাম : <span style="font-size: 30px;font-weight: bold;" id=showfinal></span> </span>
-        </p>
-
-        <button class="button" onclick="window.print()">হিসাবটি পিডিফ আকারে সংরক্ষণ করুন</button>
- 
-    </div>
-    
-
-  </div >
-
-  <div style="background-color: whitesmoke;" id="an">
-
-    <h2 style="color: blue;text-align: center; padding: 10px;">স্বর্ণের ও রুপার হিসাব (আনায়)</h2>
-
-    <div class="round2" style="text-align: center;">
-
-        <p>প্রতি আনাতে স্বর্ণের/রুপার দাম প্রবেশ করান : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text" id="priceA" > টাকা।
-        </input> <button class="button" type="button" onclick="myFunctionA()">হিসাব করুন</button>
-        </p>
-        <p>
-          <span>প্রতি ভরি স্বর্ণের/রুপার দাম  : <span style="font-weight: bold;" id="bhoriA"></span></span>
-        </p>
-        <p>
-          <span>প্রতি রতি স্বর্ণের/রুপার দাম  : <span style="font-weight: bold;" id="rotiA"></span></span>
-        </p>
-        <p>
-          <span>প্রতি পয়েন্ট স্বর্ণের/রুপার দাম  : <span style="font-weight: bold;" id="pointA"></span></span>
-        </p>
-    </div>
-
-    <div class="round2" style="text-align: center;">
-    <h2 style="color: brown; padding: 10px;"> আপনার স্বর্ণের/রুপার দাম হিসাব করুন </h2>
-
-    
-        <p>প্রতি আনায় স্বর্ণের/রুপার দাম প্রবেশ করান : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text" id="price2A" > টাকা।</input> </p>
-
-        <p><span>স্বর্ণের/রুপার ওজোন (ভরি) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="voriwA" >
-          <span style="font-weight: bold;" id="showvpA"></span></span>
-        </p>
-        <p><span>স্বর্ণের/রুপার ওজোন (আনা) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="annawA" >
-          <span style="font-weight: bold;" id="showapA"></span></span>
-        </p>
-        <p><span>স্বর্ণের/রুপার ওজোন (রতি) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="rotiwA" >
-          <span style="font-weight: bold;" id="showrpA"></span></span>
-        </p>
-        <p><span>স্বর্ণের/রুপার ওজোন (পয়েন্ট) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="pointwA" >
-          <span style="font-weight: bold;" id="showppA"></span></span>
-        </p>
-    
-
-        <button class="button" type="button" onclick="myFunction2A()">হিসাব করুন</button>
-
-        <p>
-          <span style="font-size: 30px; padding: 20px;">স্বর্ণের/রুপার হিসাবকৃত দাম : <span style="font-size: 30px;font-weight: bold;" id="showA"></span> <span style="padding: 20px;">টাকা।</span></span>
-        </p>
-
-        <p style="font-size: 20px;">বানী খরচ : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="mpA" >টাকা।
-        </p>
-
-        <button class="button" type="button" onclick="myFunction3A()">+</button>
-
-        <p>
-          <span style="font-size: 30px; padding: 20px;">স্বর্ণের/রুপার মোট হিসাবকৃত দাম : <span style="font-size: 30px;font-weight: bold;" id=showfinalA></span> </span>
-        </p>
-
-        <button class="button" onclick="window.print()">হিসাবটি পিডিফ আকারে সংরক্ষণ করুন</button>
- 
-    </div>
-
-  </div >
-
-  <div style=" background-color: rgb(230, 236, 231);" id="gram">
-
-    <h2 style="color: blue;text-align: center; padding: 10px;">স্বর্ণের ও রুপার হিসাব (গ্রামে)</h2>
-
-    <div class="round2" style="text-align: center;">
-
-        <p>প্রতি গ্রামে স্বর্ণের/রুপার দাম প্রবেশ করান : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text" id="priceG" > টাকা।
-        </input> <button class="button" type="button" onclick="myFunctionG()">হিসাব করুন</button>
-        </p>
-        <p>
-          <span>প্রতি ভরি স্বর্ণের/রুপার দাম  : <span style="font-weight: bold;" id="bhoriG"></span></span>
-        </p>
-        <p>
-          <span>প্রতি আনা স্বর্ণের/রুপার দাম  : <span style="font-weight: bold;" id="annaG"></span></span>
-        </p>
-        <p>
-          <span>প্রতি রতি স্বর্ণের/রুপার দাম  : <span style="font-weight: bold;" id="rotiG"></span></span>
-        </p>
-        <p>
-          <span>প্রতি পয়েন্ট স্বর্ণের/রুপার দাম  : <span style="font-weight: bold;" id="pointG"></span></span>
-        </p>
-    </div>
-
-    <div class="round2" style="text-align: center;">
-    <h2 style="color: brown; padding: 10px;"> আপনার স্বর্ণের/রুপার দাম হিসাব করুন </h2>
-
-    
-        <p>প্রতি গ্রামে স্বর্ণের/রুপার দাম প্রবেশ করান : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text" id="price2G" > টাকা।</input> </p>
-
-        <p><span>স্বর্ণের/রুপার ওজোন (ভরি) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="voriwG" >
-          <span style="font-weight: bold;" id="showvpG"></span></span>
-        </p>
-        <p><span>স্বর্ণের/রুপার ওজোন (আনা) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="annawG" >
-          <span style="font-weight: bold;" id="showapG"></span></span>
-        </p>
-        <p><span>স্বর্ণের/রুপার ওজোন (রতি) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="rotiwG" >
-          <span style="font-weight: bold;" id="showrpG"></span></span>
-        </p>
-        <p><span>স্বর্ণের/রুপার ওজোন (পয়েন্ট) : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="pointwG" >
-          <span style="font-weight: bold;" id="showppG"></span></span>
-        </p>
-    
-
-        <button class="button" type="button" onclick="myFunction2G()">হিসাব করুন</button>
-
-        <p>
-          <span style="font-size: 30px; padding: 20px;">স্বর্ণের/রুপার হিসাবকৃত দাম : <span style="font-size: 30px;font-weight: bold;" id="showG"></span> <span style="padding: 20px;">টাকা।</span></span>
-        </p>
-
-        <p style="font-size: 20px;">বানী খরচ : <input style="font-weight: bold; border-radius: 5px;text-align: center;" type="text"  id="mpG" >টাকা।
-        </p>
-
-        <button class="button" type="button" onclick="myFunction3G()">+</button>
-
-        <p>
-          <span style="font-size: 30px; padding: 20px;">স্বর্ণের/রুপার মোট হিসাবকৃত দাম : <span style="font-size: 30px;font-weight: bold;" id=showfinalG></span> </span>
-        </p>
-
-        <button class="button" onclick="window.print()">হিসাবটি পিডিফ আকারে সংরক্ষণ করুন</button>
- 
-    </div>
-
-  </div >
-
-
-</div>
 
 
 <div class="container da-gallery" id="gallery">

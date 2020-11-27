@@ -1,3 +1,49 @@
+function control(value){
+  var divval1 = document.getElementById('bh').style;
+  var divval2 = document.getElementById('an').style;
+  var divval3 = document.getElementById('gram').style;
+
+
+  if (value == 'bhori')
+  {
+  {
+    divval1.visibility = 'visible';
+    divval1.display = 'initial';
+    divval2.visibility = 'hidden';
+    divval2.display = 'none';
+    divval3.visibility = 'hidden';
+    divval3.display = 'none';
+  }
+  }
+
+  else if (value == 'anna'){
+  {
+    divval1.visibility = 'hidden';
+    divval1.display = 'none';
+    divval2.visibility = 'visible';
+    divval2.display = 'initial';
+    divval3.visibility = 'hidden';
+    divval3.display = 'none';
+  }
+  }
+
+  else 
+  {
+
+    divval1.visibility = 'hidden';
+    divval1.display = 'none';
+    divval2.visibility = 'hidden';
+    divval2.display = 'none';
+    divval3.visibility = 'visible';
+    divval3.display = 'initial';
+  }
+
+  
+
+
+}
+
+
 function myFunction() {
 
     var price = document.getElementById('price').value;
